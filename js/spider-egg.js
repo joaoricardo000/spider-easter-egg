@@ -1,6 +1,6 @@
 (function () {
     function SpiderEasterEgg() {
-        var spiderSrc = 'spider.html';
+        var spiderSrc = '//joaoricardo000.github.io/spider-easter-egg/spider.html';
         this.template = '<div id="spiderEggHeader">Spider<button>X</button></div><iframe id="spiderEggIframe" src="' + spiderSrc + '" frameBorder="0" scrolling="no"></iframe>';
         this.css = '#spiderEggDiv { position: absolute; top: 0; left: 0; width: 654px; height: 515px; z-index: 9999999; border: 2px solid #0B3682; background-color: #BFBFBF; } #spiderEggIframe { width: 100%; height: 100%; } #spiderEggHeader { padding-left: 6px; width: 100%; height: 25px; font-weight: bold; font-size: large; color: white; background: #0056e8; /* Old browsers */ background: -moz-linear-gradient(top, #0056e8 0%, #2989d8 100%, #207cca 100%, #0067ff 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, #0056e8 0%, #2989d8 100%, #207cca 100%, #0067ff 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, #0056e8 0%, #2989d8 100%, #207cca 100%, #0067ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0056e8", endColorstr="#0067ff", GradientType=0); /* IE6-9 */ } #spiderEggHeader button { height: 25px; float: right; font-size: small; background-color: #E65228; }';
 
