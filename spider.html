@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Spider Solitaire</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #spiderDiv {
+            position: relative;
+        }
+
+        #spiderCanvas {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div id="spiderDiv" align="center">
+    <canvas id="spiderCanvas" width="650" height="450">
+    </canvas>
+</div>
+
+<div align="center">
+    <table>
+        <tr>
+            <td>
+                <input type="button" id="btUndo" value="Undo" onclick="undo()"/>
+            </td>
+
+            <td>
+                Level:
+                <select id="selectLvl">
+                    <option value="1">Easy</option>
+                    <option value="2">Medium</option>
+                    <option value="4">Hard</option>
+                </select>
+                <input type="button" id="btNewGame" value="New game!" onclick="newGame()"/>
+            </td>
+        </tr>
+    </table>
+</div>
+<script src="js/spider.js" type="text/javascript"></script>
+</body>
+</html>
