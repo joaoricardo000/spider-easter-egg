@@ -17,8 +17,9 @@ Just add a single line of script, edit the *data-keys* attribute to your favorit
 
 The source of the game (spider.js) was written many many years ago by a friend, [Juliano](https://github.com/julianosk), and I gave some continuity at the time.  
 We were both in university, and did this to develop some programming skills.  
-Thats why the code looks awful.  
-But, the most incredible thing, is that still works! And inside an iframe won't hurt anybody.  
+~~Thats why the code looks awful.~~ Refactored. Does exactly the same, have more lines, but refactored.  
+~~But, the most incredible thing, is that still works! And inside an iframe won't hurt anybody.~~
 It was developed using only vanilla js, no requirements needed.
 
-Feel free to refactor, and good luck.
+*Refactor ad infinitum*  
+Good luck.
