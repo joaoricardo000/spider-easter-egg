@@ -23,7 +23,7 @@
     };
 
     SolitareSpider.prototype.newGame = function () {
-        var shuffledDeck = createCardsDecks(2, parseInt(document.querySelector("#selectLvl").value), false);
+        var shuffledDeck = createCardsDecks(2, parseInt(document.querySelector("#selectLvl").value), true);
 
         this.setTopDecks(shuffledDeck);
         this.setBottomDecks(shuffledDeck);
