@@ -6,6 +6,7 @@
         selected: 2
     };
 
+
     function SolitareSpider(canvasId) {
         this.bottomCardDecks = [];
         this.topCardDecks = [];
@@ -40,8 +41,8 @@
         for (var i = 0; i < 10; i++) {
             this.bottomCardDecks[i] = new CardDeck();
 
-            var deckTotal = i > 3 ? 5 : 6;
-            for (var j = 0; j < deckTotal; j++)
+            var deckSize = i > 3 ? 5 : 6;
+            for (var j = 0; j < deckSize; j++)
                 this.bottomCardDecks[i].push(shuffledCardsDeck.pop())
 
             this.bottomCardDecks[i].topCard().status = CardStatus.faceUp;
@@ -87,14 +88,12 @@
         var selectedCards = selectedDeck.splice(selectedCardIndex, selectedDeck.length - selectedCardIndex);
 
         //and puts on the target deck
-        for (var i = 0; i < selectedCards.length; i++) {
-            selectedCards[i].status = CardStatus.faceUp;
+        for (var i = 0; i < selectedCards.length; i++)
             targetDeck.push(selectedCards[i]);
-        }
 
-        var fullSequence = targetDeck.getFullSequence();
-        if (fullSequence) {
-            this.completedDecks.push(fullSequence);
+        var completeSequence = targetDeck.getFullSequence();
+        if (completeSequence) {
+            this.completedDecks.push(completeSequence);
             if (targetDeck.topCard())
                 targetDeck.topCard().status = CardStatus.faceUp;
 
@@ -168,6 +167,7 @@
             self.undo();
         };
     };
+
 
     function SpiderTable(canvas, topCardDecks, bottomCardDecks, completedDecks) {
         this.canvas = canvas;
@@ -388,6 +388,7 @@
         return finalDeck;
     }
 
+
     function CardDeck(x, y) {
         this.x = x;
         this.y = y;
@@ -424,6 +425,7 @@
         return this.length == 0 || card.number == this.topCard().number - 1
     };
 
+
     function Card(_suit, _number) {
         this.suit = _suit;
         this.number = _number;
@@ -431,6 +433,7 @@
         this.x = 0;
         this.y = 0;
     }
+
 
     function EndAnimation(table) {
         this.animating = 0;
@@ -453,18 +456,6 @@
                 if (String.fromCharCode(code).toLowerCase() == "n")
                     self.next();
             }
-        };
-
-        this.next = function () {
-            if (this.done)
-                return;
-            if (++this.currentCardIndex < table.completedDecks[this.currentDeckIndex].length)
-                this.startAnimateCard(table.completedDecks[this.currentDeckIndex][this.currentCardIndex]);
-            else if (--this.currentDeckIndex >= 0) {
-                this.currentCardIndex = 0;
-                this.startAnimateCard(table.completedDecks[this.currentDeckIndex][this.currentCardIndex]);
-            } else
-                this.done = true
         };
 
         this.startAnimateCard = function (card) {
@@ -499,7 +490,19 @@
                     self.animateCurrentCard(card, status)
                 }, self.tInterval);
             }
-        }
+        };
+
+        this.next = function () {
+            if (this.done)
+                return;
+            if (++this.currentCardIndex < table.completedDecks[this.currentDeckIndex].length)
+                this.startAnimateCard(table.completedDecks[this.currentDeckIndex][this.currentCardIndex]);
+            else if (--this.currentDeckIndex >= 0) {
+                this.currentCardIndex = 0;
+                this.startAnimateCard(table.completedDecks[this.currentDeckIndex][this.currentCardIndex]);
+            } else
+                this.done = true
+        };
     }
 
     global.SolitareSpider = SolitareSpider;
