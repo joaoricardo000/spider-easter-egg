@@ -23,7 +23,7 @@
             this.spiderDiv.id = "spiderEggDiv";
             this.spiderDiv.innerHTML = this.template;
 
-            this.spiderDiv.style.top = ((window.innerHeight / 2) - (515 / 2)) + "px";
+            this.spiderDiv.style.top = ((window.innerHeight / 2) - (515 / 2) + (document.documentElement.scrollTop || document.body.scrollTop)) + "px";
             this.spiderDiv.style.left = ((window.innerWidth / 2) - (654 / 2)) + "px";
 
             document.querySelector("body").appendChild(this.spiderDiv);
